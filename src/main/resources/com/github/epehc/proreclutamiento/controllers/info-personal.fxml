@@ -1062,7 +1062,7 @@
             <HBox prefHeight="75.0" prefWidth="621.0">
                <children>
                   <Region prefHeight="61.0" prefWidth="587.0" />
-                  <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="157.0" text="Actualizar Información">
+                  <Button fx:id="updateInfo" mnemonicParsing="false" prefHeight="41.0" prefWidth="157.0" text="Actualizar Información">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>

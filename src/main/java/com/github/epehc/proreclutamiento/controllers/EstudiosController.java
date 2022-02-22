@@ -13,19 +13,33 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 
-
+/**
+ * Controller class for info-estudios stage
+ */
 public class EstudiosController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    private GoogleSheets sheets = new GoogleSheets();
 
+    /**
+     * GoogleSheets element responsible for fetching the data from the database.
+     */
+    private final GoogleSheets sheets = new GoogleSheets();
+
+    /**
+     * Button used to update the current information
+     */
     @FXML
     public Button updateInfo;
 
     public EstudiosController() throws GeneralSecurityException, IOException {
     }
 
+    /**
+     * Method to switch to the main stage from the push of a button
+     * @param event trigger action
+     * @throws IOException
+     */
     public void switchToMain(ActionEvent event) throws IOException{
         root = FXMLLoader.load(getClass().getResource("main.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -35,6 +49,11 @@ public class EstudiosController {
         stage.show();
     }
 
+    /**
+     * Method to switch to the info-laboral stage from the push of a button
+     * @param event trigger action
+     * @throws IOException
+     */
     public void switchToLaboral(ActionEvent event)throws IOException{
         root = FXMLLoader.load(getClass().getResource("info-laboral.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -44,6 +63,11 @@ public class EstudiosController {
         stage.show();
     }
 
+    /**
+     * Method to switch to the info-personal stage from the push of a button
+     * @param event trigger action
+     * @throws IOException
+     */
     public void switchToPersonal(ActionEvent event)throws IOException{
         root = FXMLLoader.load(getClass().getResource("info-personal.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

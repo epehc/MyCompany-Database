@@ -691,7 +691,7 @@
                   <VBox prefHeight="48.0" prefWidth="187.0">
                      <children>
                         <Region prefHeight="11.0" prefWidth="110.0" />
-                        <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="189.0" text="Actualizar Información" textAlignment="CENTER" wrapText="true">
+                        <Button fx:id="updateInfo" mnemonicParsing="false" prefHeight="43.0" prefWidth="189.0" text="Actualizar Información" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
