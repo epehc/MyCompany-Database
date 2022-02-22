@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="1000.0" minHeight="257.0" minWidth="417.0" prefHeight="600.0" prefWidth="837.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.epehc.proreclutamiento.controllers.MainController">
+   <bottom>
+      <ButtonBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="TOP_LEFT">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#switchToPersonal" text="Personal">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#switchToEstudios" text="Estudios">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#switchToLaboral" text="Laboral">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Inicio">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+        </buttons>
+         <BorderPane.margin>
+            <Insets right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <top>
+      <HBox prefHeight="54.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/PROreclutamiento-Logo.png" />
+               </image>
+            </ImageView>
+            <Region prefHeight="56.0" prefWidth="302.0" />
+            <VBox prefHeight="55.0" prefWidth="249.0">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="230.0" spacing="10.0">
+                     <children>
+                        <Label text="Candidato actual:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="candidatoActual" text="Label" />
+                     </children>
+                  </HBox>
+                  <Region prefHeight="200.0" prefWidth="249.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="17.0">
+                     <children>
+                        <Label text="Número de DPI:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="noDeDpiActual" text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table" prefHeight="409.0" prefWidth="837.0">
+              <columns>
+                <TableColumn fx:id="dpis" prefWidth="131.0" text="No. de DPI:" />
+                <TableColumn fx:id="fechas" prefWidth="127.0" text="Fecha" />
+                  <TableColumn fx:id="nombres" prefWidth="347.0" text="Nombre" />
+                  <TableColumn fx:id="puestos" minWidth="0.0" prefWidth="231.0" text="Puesto al que aplica:" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Region prefHeight="93.0" prefWidth="103.0" />
+                  <Label text="Buscar:">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="93.0" prefWidth="196.0" spacing="10.0">
+                     <children>
+                        <TextField promptText="1234567890123" />
+                        <Button fx:id="btnIngresar" mnemonicParsing="false" text="Ingresar">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

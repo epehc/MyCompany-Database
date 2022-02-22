@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="347.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.epehc.proreclutamiento.controllers.EstudiosController">
+   <bottom>
+      <ButtonBar prefHeight="37.0" prefWidth="442.0" BorderPane.alignment="CENTER">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#switchToPersonal" text="Personal">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Label alignment="CENTER" text="Estudios">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#switchToLaboral" text="Laboral">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#switchToMain" text="Inicio">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </buttons>
+         <padding>
+            <Insets bottom="10.0" right="15.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <top>
+      <HBox prefHeight="54.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/PROreclutamiento-Logo.png" />
+               </image>
+            </ImageView>
+            <Region prefHeight="55.0" prefWidth="64.0" />
+            <VBox prefHeight="55.0" prefWidth="249.0">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="230.0" spacing="10.0">
+                     <children>
+                        <Label text="Candidato actual:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Label" />
+                     </children>
+                  </HBox>
+                  <Region prefHeight="200.0" prefWidth="249.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="17.0">
+                     <children>
+                        <Label text="Número de DPI:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Label" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="Doctorado">
+                     <content>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="212.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="332.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Qué estudió:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="37.0" text="Nombre de la institución:">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Último grado cursado:" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Maestría">
+                     <content>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="212.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="332.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Qué estudió:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="37.0" text="Nombre de la institución:">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Último grado cursado:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Licenciatura">
+                     <content>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="212.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="332.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Qué estudió:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="37.0" text="Nombre de la institución:">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Último grado cursado:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Técnico">
+                     <content>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="212.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="332.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Qué estudió:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="37.0" text="Nombre de la institución:">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Último grado cursado:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Colegio">
+                     <content>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="212.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="332.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Qué estudió:" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="10.0" layoutY="37.0" text="Nombre de la institución:">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Último grado cursado:" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial Black" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="15.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Otros">
+                     <content>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="45.0">
+                           <children>
+                              <Label text="Otros Estudios:">
+                                 <font>
+                                    <Font name="Arial Black" size="12.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </Label>
+                              <TextArea prefHeight="241.0" prefWidth="324.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" left="30.0" top="20.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <HBox prefHeight="50.0" prefWidth="544.0">
+               <children>
+                  <Region prefHeight="51.0" prefWidth="381.0" />
+                  <Button fx:id="updateInfo" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="38.0" prefWidth="161.0" text="Actualizar Información">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
