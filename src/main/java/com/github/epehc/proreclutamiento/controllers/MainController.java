@@ -1,6 +1,7 @@
 package com.github.epehc.proreclutamiento.controllers;
 
 import com.github.epehc.proreclutamiento.google.GoogleSheets;
+import com.github.epehc.proreclutamiento.google.GoogleSheetsMethods;
 import com.github.epehc.proreclutamiento.informaciones.InformacionInicio;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -37,15 +38,7 @@ public class MainController implements Initializable {
     /**
      * GoogleSheets element responsible for fetching the data from the database.
      */
-    static GoogleSheets sheets = null;
-
-    static {
-        try {
-            sheets = new GoogleSheets();
-        } catch (GeneralSecurityException | IOException e) {
-            e.printStackTrace();
-        }
-    }
+    static GoogleSheetsMethods sheets = new GoogleSheetsMethods();
 
 
     /**

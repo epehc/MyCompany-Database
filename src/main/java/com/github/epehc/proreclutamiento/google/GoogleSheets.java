@@ -48,9 +48,19 @@ public class GoogleSheets {
     private static final String TOKENS_DIRECTORY_PATH = "tokens";
 
     /**
+     * Entire range of the Spreadsheet to work on
+     */
+    private static final String RANGE_ENTIRE = "Main!A4:DU";
+
+    /**
+     * Range of the Spreadsheet to load information from at the start of the program
+     */
+    static final String RANGE_INVERSE_FOR_START = "Invertido!A4:E";
+
+    /**
      * ID of the Spreadsheet to be worked with
      */
-    private static final String SPREADSHEET_ID = "1ptUdJ-99TFzq_bGvxB9H3Iz5T5y4-A4y64PXj6tYEkI";
+    static final String SPREADSHEET_ID = "1ptUdJ-99TFzq_bGvxB9H3Iz5T5y4-A4y64PXj6tYEkI";
 
     /**
      * Global instance of the scopes required by this quickstart.
@@ -62,10 +72,12 @@ public class GoogleSheets {
      */
     private static final String CREDENTIALS_FILE_PATH = "/com/github/epehc/proreclutamiento/credentials/credentials.json";
 
+    static Sheets service;
+
     /**
      * List of List to store the information from the database
      */
-    private static List<List<Object>> values;
+    static List<List<Object>> values;
 
     /**
      * Creates an authorized Credential object.
@@ -98,13 +110,12 @@ public class GoogleSheets {
      */
     public GoogleSheets() throws GeneralSecurityException, IOException {
         // Build a new authorized API client service.
-        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        final String range = "Main!A4:DU";
-        Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+        NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+        service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();
         ValueRange response = service.spreadsheets().values()
-                .get(SPREADSHEET_ID, range)
+                .get(SPREADSHEET_ID, RANGE_ENTIRE)
                 .execute();
         values = response.getValues();
         if (values == null || values.isEmpty()) {
@@ -112,85 +123,6 @@ public class GoogleSheets {
         }
     }
 
-    /**
-     * Method to get the Information from the first few Columns to later add in a TableView in MainController class
-     * @return an ObservableList
-     * @throws GeneralSecurityException
-     * @throws IOException
-     */
-    public ObservableList<InformacionInicio> getTableViewContentForInicio() throws GeneralSecurityException, IOException {
-        ObservableList<InformacionInicio> list = FXCollections.observableArrayList();
-        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        final String range = "Invertido!A4:E";
-        Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
-                .setApplicationName(APPLICATION_NAME)
-                .build();
-        ValueRange response = service.spreadsheets().values()
-                .get(SPREADSHEET_ID, range)
-                .execute();
-        List<List<Object>> values = response.getValues();
-        
-        for(List row : values){
-            list.add(new InformacionInicio((String) row.get(0), (String) row.get(2), (String) row.get(3), (String) row.get(4)));
-        }
-        return list;
-    }
 
-    public InformacionEstudios getInformacionEstudios(String dpi){
-        for(List row: values){
-            if(row.get(0).equals(dpi)){
-                return new InformacionEstudios((String) row.get(46),(String) row.get(47), (String) row.get(48),(String) row.get(49),
-                        (String) row.get(50), (String) row.get(51),(String) row.get(52),(String) row.get(53),(String) row.get(54),
-                        (String) row.get(55), (String) row.get(56),(String) row.get(57),(String) row.get(58),
-                        (String) row.get(59),(String) row.get(60),(String) row.get(61));
-            }
-        }
-        return new InformacionEstudios();
-    }
-
-    public InformacionReferencias getInfoReferencias(String dpi) throws GeneralSecurityException, IOException {
-        List<List<Object>> list = FXCollections.observableArrayList();
-        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        final String range = "Referencias!A4:I";
-        Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
-                .setApplicationName(APPLICATION_NAME)
-                .build();
-        ValueRange response = service.spreadsheets().values()
-                .get(SPREADSHEET_ID, range)
-                .execute();
-        List<List<Object>> values = response.getValues();
-
-        for(List row : values){
-            if(row.get(0).equals(dpi))
-            return new InformacionReferencias((String)row.get(0), (String)row.get(5), (String)row.get(6), (String)row.get(7), (String)row.get(8));
-        }
-        return new InformacionReferencias();
-    }
-
-    public InformacionLaboral getInformacionLaboral(String dpi){
-        for(List row: values){
-            if(row.get(0).equals(dpi)){
-                return new InformacionLaboral((String) row.get(62),(String) row.get(63),(String) row.get(64),(String) row.get(65),
-                        (String) row.get(66),(String) row.get(67),(String) row.get(68),(String) row.get(69),(String) row.get(70),
-                        (String) row.get(71),(String) row.get(72),(String) row.get(73),(String) row.get(74),
-                        (String) row.get(75),(String) row.get(76),(String) row.get(77),(String) row.get(78),(String) row.get(79),
-                        (String) row.get(80),(String) row.get(81),(String) row.get(82),(String) row.get(83),
-                        (String) row.get(84),(String) row.get(85),(String) row.get(86),(String) row.get(87),(String) row.get(88),
-                        (String) row.get(89),(String) row.get(90),(String) row.get(91),(String) row.get(92),(String) row.get(93),
-                        (String) row.get(94),(String) row.get(95),(String) row.get(96),(String) row.get(97),
-                        (String) row.get(98),(String) row.get(99),(String) row.get(100),(String) row.get(101),(String) row.get(102),
-                        (String) row.get(103), (String) row.get(104), (String) row.get(105));
-            }
-        }
-        return new InformacionLaboral();
-    }
-
-    /**
-     * Getter for the List of List of items in the spreadsheet
-     * @return
-     */
-    public List<List<Object>> getValues() {
-        return values;
-    }
 
 }
