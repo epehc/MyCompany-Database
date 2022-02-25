@@ -53,11 +53,6 @@ public class GoogleSheets {
     private static final String RANGE_ENTIRE = "Main!A4:DU";
 
     /**
-     * Range of the Spreadsheet to load information from at the start of the program
-     */
-    static final String RANGE_INVERSE_FOR_START = "Invertido!A4:E";
-
-    /**
      * ID of the Spreadsheet to be worked with
      */
     static final String SPREADSHEET_ID = "1ptUdJ-99TFzq_bGvxB9H3Iz5T5y4-A4y64PXj6tYEkI";

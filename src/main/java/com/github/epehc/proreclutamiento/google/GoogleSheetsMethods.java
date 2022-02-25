@@ -34,7 +34,7 @@ public class GoogleSheetsMethods {
 
         //Different value range since another range in another spreadsheet is being used
         ValueRange response = GoogleSheets.service.spreadsheets().values()
-                .get(GoogleSheets.SPREADSHEET_ID, GoogleSheets.RANGE_INVERSE_FOR_START)
+                .get(GoogleSheets.SPREADSHEET_ID, "Invertido!A4:E")
                 .execute();
         List<List<Object>> values = response.getValues();
 
