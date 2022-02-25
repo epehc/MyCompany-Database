@@ -4,22 +4,33 @@ import com.github.epehc.proreclutamiento.google.GoogleSheets;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.security.GeneralSecurityException;
+import java.util.ResourceBundle;
 
 /**
  * Controller class for info-estudios stage
  */
-public class EstudiosController {
+public class EstudiosController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    private Label labelNoDeDpiActual;
+    @FXML
+    private Label labelCandidatoActual;
+
+
 
     /**
      * GoogleSheets element responsible for fetching the data from the database.
@@ -75,5 +86,20 @@ public class EstudiosController {
         stage.setTitle("PROreclutamiento - Personal");
         stage.setScene(scene);
         stage.show();
+    }
+
+    /**
+     * Called to initialize a controller after its root element has been
+     * completely processed.
+     *
+     * @param location  The location used to resolve relative paths for the root object, or
+     *                  {@code null} if the location is not known.
+     * @param resources The resources used to localize the root object, or {@code null} if
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        labelCandidatoActual.setText(MainController.candidatoActual.get());
+        labelNoDeDpiActual.setText(MainController.noDeDpiActual.get());
+
     }
 }

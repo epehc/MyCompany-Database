@@ -62,7 +62,7 @@ public class GoogleSheets {
     /**
      * List of List to store the information from the database
      */
-    private List<List<Object>> values;
+    private static List<List<Object>> values;
 
     /**
      * Creates an authorized Credential object.
