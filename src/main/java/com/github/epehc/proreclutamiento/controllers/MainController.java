@@ -31,13 +31,21 @@ public class MainController implements Initializable {
     private Scene scene;
     private Parent root;
 
-    static StringProperty noDeDpiActual = new SimpleStringProperty();
-    static StringProperty candidatoActual = new SimpleStringProperty();
+    static StringProperty noDeDpiActual;
+    static StringProperty candidatoActual;
 
     /**
      * GoogleSheets element responsible for fetching the data from the database.
      */
-    private final GoogleSheets sheets = new GoogleSheets();
+    static GoogleSheets sheets = null;
+
+    static {
+        try {
+            sheets = new GoogleSheets();
+        } catch (GeneralSecurityException | IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     /**
@@ -78,6 +86,7 @@ public class MainController implements Initializable {
      * @throws IOException
      */
     public MainController() throws GeneralSecurityException, IOException {
+
     }
 
     /**
@@ -132,10 +141,16 @@ public class MainController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if(noDeDpiActual == null && candidatoActual == null){
+            noDeDpiActual = new SimpleStringProperty();
+            candidatoActual= new SimpleStringProperty();
+        }
 
+        labelCandidatoActual.setText(candidatoActual.get());
+        labelNoDeDpiActual.setText(noDeDpiActual.get());
         //Load the candidate's information into the list
         try {
-            tableContent.addAll(sheets.getTableViewContent());
+            tableContent.addAll(sheets.getTableViewContentForInicio());
         } catch (GeneralSecurityException | IOException e) {
             e.printStackTrace();
         }
@@ -149,7 +164,7 @@ public class MainController implements Initializable {
         //Load the information into the table
         table.setItems(tableContent);
         table.setEditable(true);
-        table.getSortOrder().add(fechas);
+        //table.getSortOrder().add(fechas);
 
         dpis.setCellFactory(TextFieldTableCell.forTableColumn());
 

@@ -1,5 +1,6 @@
 package com.github.epehc.proreclutamiento.google;
 
+import com.github.epehc.proreclutamiento.informaciones.InformacionEstudios;
 import com.github.epehc.proreclutamiento.informaciones.InformacionInicio;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
@@ -115,10 +116,10 @@ public class GoogleSheets {
      * @throws GeneralSecurityException
      * @throws IOException
      */
-    public ObservableList<InformacionInicio> getTableViewContent() throws GeneralSecurityException, IOException {
+    public ObservableList<InformacionInicio> getTableViewContentForInicio() throws GeneralSecurityException, IOException {
         ObservableList<InformacionInicio> list = FXCollections.observableArrayList();
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        final String range = "Main!A4:E";
+        final String range = "Invertido!A4:E";
         Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();
@@ -131,6 +132,18 @@ public class GoogleSheets {
             list.add(new InformacionInicio((String) row.get(0), (String) row.get(2), (String) row.get(3), (String) row.get(4)));
         }
         return list;
+    }
+
+    public InformacionEstudios getInformacionEstudios(String dpi) throws GeneralSecurityException, IOException{
+        for(List row: values){
+            if(((String) row.get(0)).equals(dpi)){
+                return new InformacionEstudios((String) row.get(46),(String) row.get(47), (String) row.get(48),(String) row.get(49),
+                        (String) row.get(50), (String) row.get(51),(String) row.get(52),(String) row.get(53),(String) row.get(54),
+                        (String) row.get(55), (String) row.get(56),(String) row.get(57),(String) row.get(58),
+                        (String) row.get(59),(String) row.get(60),(String) row.get(61));
+            }
+        }
+        return new InformacionEstudios();
     }
 
     /**

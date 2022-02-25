@@ -55,7 +55,7 @@
                </image>
             </ImageView>
             <Region prefHeight="55.0" prefWidth="64.0" />
-            <VBox prefHeight="55.0" prefWidth="249.0">
+            <VBox prefHeight="35.0" prefWidth="276.0">
                <children>
                   <HBox prefHeight="28.0" prefWidth="230.0" spacing="10.0">
                      <children>
@@ -64,7 +64,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label text="Label" />
+                        <Label fx:id="labelCandidatoActual" />
                      </children>
                   </HBox>
                   <Region prefHeight="200.0" prefWidth="249.0" />
@@ -75,7 +75,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label text="Label" />
+                        <Label fx:id="labelNoDeDpiActual" />
                      </children>
                   </HBox>
                </children>
@@ -128,17 +128,17 @@
                                     <Font name="Arial Black" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField GridPane.columnIndex="1">
+                              <TextField fx:id="tvDoctoradoInstitucion" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="tvDoctoradoEstudio" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="tvDoctoradoGrado" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
@@ -184,17 +184,17 @@
                                     <Insets left="15.0" />
                                  </GridPane.margin>
                               </Label>
-                              <TextField GridPane.columnIndex="1">
+                              <TextField fx:id="tvMaestriaInstitucion" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="tvMaestriaEstudio" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="tvMaestriaGrado" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
@@ -240,17 +240,17 @@
                                     <Insets left="15.0" />
                                  </GridPane.margin>
                               </Label>
-                              <TextField GridPane.columnIndex="1">
+                              <TextField fx:id="tvLicenciaturaInstitucion" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="tvLicenciaturaEstudio" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="tvLicenciaturaGrado" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
@@ -296,17 +296,17 @@
                                     <Insets left="15.0" />
                                  </GridPane.margin>
                               </Label>
-                              <TextField GridPane.columnIndex="1">
+                              <TextField fx:id="tvTecnicoInstitucion" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="tvTecnicoEstudio" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="tvTecnicoGrado" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
@@ -352,17 +352,17 @@
                                     <Insets left="15.0" />
                                  </GridPane.margin>
                               </Label>
-                              <TextField GridPane.columnIndex="1">
+                              <TextField fx:id="tvColegioInstitucion" GridPane.columnIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="tvColegioEstudio" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
                               </TextField>
-                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="tvColegioGrado" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="10.0" />
                                  </GridPane.margin>
@@ -383,7 +383,7 @@
                                     <Insets top="10.0" />
                                  </padding>
                               </Label>
-                              <TextArea prefHeight="241.0" prefWidth="324.0" />
+                              <TextArea fx:id="taOtrosEstudios" prefHeight="241.0" prefWidth="324.0" wrapText="true" />
                            </children>
                            <padding>
                               <Insets bottom="20.0" left="30.0" top="20.0" />

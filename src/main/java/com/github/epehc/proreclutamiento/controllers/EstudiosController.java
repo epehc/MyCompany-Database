@@ -1,6 +1,7 @@
 package com.github.epehc.proreclutamiento.controllers;
 
 import com.github.epehc.proreclutamiento.google.GoogleSheets;
+import com.github.epehc.proreclutamiento.informaciones.InformacionEstudios;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,12 +28,60 @@ public class EstudiosController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    private InformacionEstudios informacionEstudios;
+
     @FXML
     private Label labelNoDeDpiActual;
     @FXML
     private Label labelCandidatoActual;
 
+    @FXML
+    private TextArea taOtrosEstudios;
 
+    @FXML
+    private TextField tvColegioEstudio;
+
+    @FXML
+    private TextField tvColegioGrado;
+
+    @FXML
+    private TextField tvColegioInstitucion;
+
+    @FXML
+    private TextField tvDoctoradoEstudio;
+
+    @FXML
+    private TextField tvDoctoradoGrado;
+
+    @FXML
+    private TextField tvDoctoradoInstitucion;
+
+    @FXML
+    private TextField tvLicenciaturaEstudio;
+
+    @FXML
+    private TextField tvLicenciaturaGrado;
+
+    @FXML
+    private TextField tvLicenciaturaInstitucion;
+
+    @FXML
+    private TextField tvMaestriaEstudio;
+
+    @FXML
+    private TextField tvMaestriaGrado;
+
+    @FXML
+    private TextField tvMaestriaInstitucion;
+
+    @FXML
+    private TextField tvTecnicoEstudio;
+
+    @FXML
+    private TextField tvTecnicoGrado;
+
+    @FXML
+    private TextField tvTecnicoInstitucion;
 
     /**
      * GoogleSheets element responsible for fetching the data from the database.
@@ -98,8 +149,41 @@ public class EstudiosController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            informacionEstudios = MainController.sheets.getInformacionEstudios(MainController.noDeDpiActual.get());
+        } catch (GeneralSecurityException | IOException e) {
+            e.printStackTrace();
+        }
         labelCandidatoActual.setText(MainController.candidatoActual.get());
         labelNoDeDpiActual.setText(MainController.noDeDpiActual.get());
+
+        /*Bind all textProperties bi-directionally to their InformacionEstudios counterparts, so that they initialize to the
+        correct values, and so that they can update as well.
+         */
+        tvDoctoradoInstitucion.textProperty().bindBidirectional(informacionEstudios.doctoradoInstitucionProperty());
+        tvDoctoradoEstudio.textProperty().bindBidirectional(informacionEstudios.doctoradoEstudioProperty());
+        tvDoctoradoGrado.textProperty().bindBidirectional(informacionEstudios.doctoradoGradoProperty());
+
+        tvMaestriaInstitucion.textProperty().bindBidirectional(informacionEstudios.maestriaInstitucionProperty());
+        tvMaestriaEstudio.textProperty().bindBidirectional(informacionEstudios.maestriaEstudioProperty());
+        tvMaestriaGrado.textProperty().bindBidirectional(informacionEstudios.maestriaGradoProperty());
+
+        tvLicenciaturaInstitucion.textProperty().bindBidirectional(informacionEstudios.licenciaturaInstitucionProperty());
+        tvLicenciaturaEstudio.textProperty().bindBidirectional(informacionEstudios.licenciaturaEstudioProperty());
+        tvLicenciaturaGrado.textProperty().bindBidirectional(informacionEstudios.licenciaturaGradoProperty());
+
+        tvTecnicoInstitucion.textProperty().bindBidirectional(informacionEstudios.tecnicoInstitucionProperty());
+        tvTecnicoEstudio.textProperty().bindBidirectional(informacionEstudios.tecnicoEstudioProperty());
+        tvTecnicoGrado.textProperty().bindBidirectional(informacionEstudios.tecnicoGradoProperty());
+
+        tvColegioInstitucion.textProperty().bindBidirectional(informacionEstudios.colegioInstitucionProperty());
+        tvColegioEstudio.textProperty().bindBidirectional(informacionEstudios.colegioEstudioProperty());
+        tvColegioGrado.textProperty().bindBidirectional(informacionEstudios.colegioGradoProperty());
+
+        taOtrosEstudios.textProperty().bindBidirectional(informacionEstudios.otrosEstudiosProperty());
+
+
+
 
     }
 }
