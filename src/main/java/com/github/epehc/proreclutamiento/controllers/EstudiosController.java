@@ -149,11 +149,9 @@ public class EstudiosController implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try {
-            informacionEstudios = MainController.sheets.getInformacionEstudios(MainController.noDeDpiActual.get());
-        } catch (GeneralSecurityException | IOException e) {
-            e.printStackTrace();
-        }
+
+        informacionEstudios = MainController.sheets.getInformacionEstudios(MainController.noDeDpiActual.get());
+
         labelCandidatoActual.setText(MainController.candidatoActual.get());
         labelNoDeDpiActual.setText(MainController.noDeDpiActual.get());
 

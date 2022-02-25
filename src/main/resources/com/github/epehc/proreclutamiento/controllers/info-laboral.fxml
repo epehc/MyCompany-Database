@@ -113,13 +113,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfNombreEmpresa1" />
                                           <Label text="Teléfono de la empresa:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfTelefonoEmpresa1" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -132,13 +132,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfDireccionEmpresa1" />
                                           <Label text="Puesto ejercido:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfPuestoEmpresa1" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -151,13 +151,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfMotivoSalida1" />
                                           <Label text="Último salario:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfSalario1" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -170,13 +170,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfNombreJefe1" />
                                           <Label text="Teléfono de jefe:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfTelefonoJefe1" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -189,7 +189,7 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextArea prefHeight="78.0" prefWidth="223.0" />
+                                          <TextArea fx:id="taResponsabilidades1" prefHeight="78.0" prefWidth="223.0" wrapText="true" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -202,13 +202,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfFechaInicioEmpresa1" />
                                           <Label text="Fecha de finalización:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfFechaFinEmpresa1" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -223,7 +223,7 @@
                                           <Font name="Arial Black" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextArea prefHeight="94.0" prefWidth="736.0" />
+                                    <TextArea fx:id="taReferencias1" prefHeight="94.0" prefWidth="736.0" wrapText="true" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />
@@ -261,13 +261,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfNombreEmpresa2" />
                                           <Label text="Teléfono de la empresa:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfTelefonoEmpresa2" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -280,13 +280,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfDireccionEmpresa2" />
                                           <Label text="Puesto ejercido:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfPuestoEmpresa2" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -299,13 +299,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfMotivoSalida2" />
                                           <Label text="Último salario:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfSalario2" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -318,13 +318,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfNombreJefe2" />
                                           <Label text="Teléfono de jefe:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfTelefonoJefe2" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -337,7 +337,7 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextArea prefHeight="78.0" prefWidth="223.0" />
+                                          <TextArea fx:id="taResponsabilidades2" prefHeight="78.0" prefWidth="223.0" wrapText="true" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -350,13 +350,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfFechaInicioEmpresa2" />
                                           <Label text="Fecha de finalización:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfFechaFinEmpresa2" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -371,7 +371,7 @@
                                           <Font name="Arial Black" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextArea prefHeight="94.0" prefWidth="736.0" />
+                                    <TextArea fx:id="taReferencias2" prefHeight="94.0" prefWidth="736.0" wrapText="true" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />
@@ -409,13 +409,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfNombreEmpresa3" />
                                           <Label text="Teléfono de la empresa:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfTelefonoEmpresa3" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -428,13 +428,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfDireccionEmpresa3" />
                                           <Label text="Puesto ejercido:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfPuestoEmpresa3" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -447,13 +447,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfMotivoSalida3" />
                                           <Label text="Último salario:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfSalario3" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -466,13 +466,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfNombreJefe3" />
                                           <Label text="Teléfono de jefe:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfTelefonoJefe3" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -485,7 +485,7 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextArea prefHeight="78.0" prefWidth="223.0" />
+                                          <TextArea fx:id="taResponsabilidades3" prefHeight="78.0" prefWidth="223.0" wrapText="true" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -498,13 +498,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfFechaInicioEmpresa3" />
                                           <Label text="Fecha de finalización:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfFechaFinEmpresa3" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -519,7 +519,7 @@
                                           <Font name="Arial Black" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextArea prefHeight="94.0" prefWidth="736.0" />
+                                    <TextArea fx:id="taReferencias3" prefHeight="94.0" prefWidth="736.0" wrapText="true" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />
@@ -557,13 +557,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfNombreEmpresa4" />
                                           <Label text="Teléfono de la empresa:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfTelefonoEmpresa4" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -576,13 +576,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfDireccionEmpresa4" />
                                           <Label text="Puesto ejercido:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfPuestoEmpresa4" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -595,13 +595,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfMotivoSalida4" />
                                           <Label text="Último salario:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfSalario4" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -614,13 +614,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfNombreJefe4" />
                                           <Label text="Teléfono de jefe:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfTelefonoJefe4" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -633,7 +633,7 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextArea prefHeight="78.0" prefWidth="223.0" />
+                                          <TextArea fx:id="taResponsabilidades4" prefHeight="78.0" prefWidth="223.0" wrapText="true" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets left="10.0" right="10.0" top="10.0" />
@@ -646,13 +646,13 @@
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfFechaInicioEmpresa4" />
                                           <Label text="Fecha de finalización:">
                                              <font>
                                                 <Font name="Arial Black" size="14.0" />
                                              </font>
                                           </Label>
-                                          <TextField />
+                                          <TextField fx:id="tfFechaFinEmpresa4" />
                                        </children>
                                        <GridPane.margin>
                                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -667,7 +667,7 @@
                                           <Font name="Arial Black" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextArea prefHeight="94.0" prefWidth="736.0" />
+                                    <TextArea fx:id="taReferencias4" prefHeight="94.0" prefWidth="736.0" wrapText="true" />
                                  </children>
                                  <opaqueInsets>
                                     <Insets />

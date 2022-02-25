@@ -16,7 +16,7 @@ public class InformacionLaboral {
     StringProperty salario1;
     StringProperty motivoSalida1;
     StringProperty responsabilidades1;
-    StringProperty referencias1;
+
 
     //Trabajo 2
     StringProperty empresa2;
@@ -30,7 +30,7 @@ public class InformacionLaboral {
     StringProperty salario2;
     StringProperty motivoSalida2;
     StringProperty responsabilidades2;
-    StringProperty referencias2;
+
 
     //Trabajo 3
     StringProperty empresa3;
@@ -44,7 +44,7 @@ public class InformacionLaboral {
     StringProperty salario3;
     StringProperty motivoSalida3;
     StringProperty responsabilidades3;
-    StringProperty referencias3;
+
 
     //Trabajo 4
     StringProperty empresa4;
@@ -58,7 +58,7 @@ public class InformacionLaboral {
     StringProperty salario4;
     StringProperty motivoSalida4;
     StringProperty responsabilidades4;
-    StringProperty referencias4;
+
 
     public InformacionLaboral(){
 
@@ -66,17 +66,17 @@ public class InformacionLaboral {
     public InformacionLaboral(String empresa1, String fechaInicio1, String fechaFin1, String telefonoEmpresa1,
                               String direccionEmpresa1, String puesto1, String jefe1, String telefonoJefe1,
                               String salario1, String motivoSalida1, String responsabilidades1,
-                              String referencias1, String empresa2, String fechaInicio2, String fechaFin2,
+                               String empresa2, String fechaInicio2, String fechaFin2,
                               String telefonoEmpresa2, String direccionEmpresa2, String puesto2, String jefe2,
                               String telefonoJefe2, String salario2, String motivoSalida2,
-                              String responsabilidades2, String referencias2, String empresa3,
+                              String responsabilidades2, String empresa3,
                               String fechaInicio3, String fechaFin3, String telefonoEmpresa3,
                               String direccionEmpresa3, String puesto3, String jefe3, String telefonoJefe3,
                               String salario3, String motivoSalida3, String responsabilidades3,
-                              String referencias3, String empresa4, String fechaInicio4, String fechaFin4,
+                               String empresa4, String fechaInicio4, String fechaFin4,
                               String telefonoEmpresa4, String direccionEmpresa4, String puesto4, String jefe4,
                               String telefonoJefe4, String salario4, String motivoSalida4,
-                              String responsabilidades4, String referencias4) {
+                              String responsabilidades4) {
         this.empresa1 = new SimpleStringProperty(empresa1);
         this.fechaInicio1 = new SimpleStringProperty(fechaInicio1);
         this.fechaFin1 = new SimpleStringProperty(fechaFin1);
@@ -88,7 +88,6 @@ public class InformacionLaboral {
         this.salario1 = new SimpleStringProperty(salario1);
         this.motivoSalida1 = new SimpleStringProperty(motivoSalida1);
         this.responsabilidades1 = new SimpleStringProperty(responsabilidades1);
-        this.referencias1 = new SimpleStringProperty(referencias1);
         this.empresa2 = new SimpleStringProperty(empresa2);
         this.fechaInicio2 = new SimpleStringProperty(fechaInicio2);
         this.fechaFin2 = new SimpleStringProperty(fechaFin2);
@@ -100,7 +99,6 @@ public class InformacionLaboral {
         this.salario2 = new SimpleStringProperty(salario2);
         this.motivoSalida2 = new SimpleStringProperty(motivoSalida2);
         this.responsabilidades2 = new SimpleStringProperty(responsabilidades2);
-        this.referencias2 = new SimpleStringProperty(referencias2);
         this.empresa3 = new SimpleStringProperty(empresa3);
         this.fechaInicio3 = new SimpleStringProperty(fechaInicio3);
         this.fechaFin3 = new SimpleStringProperty(fechaFin3);
@@ -112,7 +110,6 @@ public class InformacionLaboral {
         this.salario3 = new SimpleStringProperty(salario3);
         this.motivoSalida3 = new SimpleStringProperty(motivoSalida3);
         this.responsabilidades3 = new SimpleStringProperty(responsabilidades3);
-        this.referencias3 = new SimpleStringProperty(referencias3);
         this.empresa4 = new SimpleStringProperty(empresa4);
         this.fechaInicio4 = new SimpleStringProperty(fechaInicio4);
         this.fechaFin4 = new SimpleStringProperty(fechaFin4);
@@ -124,7 +121,6 @@ public class InformacionLaboral {
         this.salario4 = new SimpleStringProperty(salario4);
         this.motivoSalida4 = new SimpleStringProperty(motivoSalida4);
         this.responsabilidades4 = new SimpleStringProperty(responsabilidades4);
-        this.referencias4 = new SimpleStringProperty(referencias4);
     }
 
     public String getEmpresa1() {
@@ -259,17 +255,6 @@ public class InformacionLaboral {
         this.responsabilidades1.set(responsabilidades1);
     }
 
-    public String getReferencias1() {
-        return referencias1.get();
-    }
-
-    public StringProperty referencias1Property() {
-        return referencias1;
-    }
-
-    public void setReferencias1(String referencias1) {
-        this.referencias1.set(referencias1);
-    }
 
     public String getEmpresa2() {
         return empresa2.get();
@@ -403,17 +388,6 @@ public class InformacionLaboral {
         this.responsabilidades2.set(responsabilidades2);
     }
 
-    public String getReferencias2() {
-        return referencias2.get();
-    }
-
-    public StringProperty referencias2Property() {
-        return referencias2;
-    }
-
-    public void setReferencias2(String referencias2) {
-        this.referencias2.set(referencias2);
-    }
 
     public String getEmpresa3() {
         return empresa3.get();
@@ -547,17 +521,6 @@ public class InformacionLaboral {
         this.responsabilidades3.set(responsabilidades3);
     }
 
-    public String getReferencias3() {
-        return referencias3.get();
-    }
-
-    public StringProperty referencias3Property() {
-        return referencias3;
-    }
-
-    public void setReferencias3(String referencias3) {
-        this.referencias3.set(referencias3);
-    }
 
     public String getEmpresa4() {
         return empresa4.get();
@@ -691,15 +654,4 @@ public class InformacionLaboral {
         this.responsabilidades4.set(responsabilidades4);
     }
 
-    public String getReferencias4() {
-        return referencias4.get();
-    }
-
-    public StringProperty referencias4Property() {
-        return referencias4;
-    }
-
-    public void setReferencias4(String referencias4) {
-        this.referencias4.set(referencias4);
-    }
 }
