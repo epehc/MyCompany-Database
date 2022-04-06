@@ -3,11 +3,18 @@ package com.github.epehc.proreclutamiento.informaciones;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.ArrayList;
+
 public class InformacionPersonal {
+
+    ArrayList<String> list;
+
+    ArrayList<String> familiaList;
 
     //Personal
     StringProperty dpi;
     StringProperty fecha;
+    StringProperty timestamp;
     StringProperty nombre;
     StringProperty puesto;
     StringProperty comoEntero;
@@ -43,7 +50,6 @@ public class InformacionPersonal {
     StringProperty drogas;
     StringProperty tatuajes;
     StringProperty paisResidencia;
-    StringProperty estudiosMasAltos;
 
     //Direccion
     StringProperty calle;
@@ -77,7 +83,73 @@ public class InformacionPersonal {
     StringProperty trabajoConocido;
     StringProperty telefonoConocido;
 
-    public InformacionPersonal(String dpi, String fecha, String nombre, String puesto,
+    public InformacionPersonal() {
+        this.list = new ArrayList<>();
+        this.familiaList =new ArrayList<>();
+
+        this.dpi = new SimpleStringProperty();
+        this.fecha = new SimpleStringProperty();
+        this.timestamp = new SimpleStringProperty();
+        this.nombre = new SimpleStringProperty();
+        this.puesto = new SimpleStringProperty();
+        this.comoEntero = new SimpleStringProperty();
+        this.genero = new SimpleStringProperty();
+        this.noTelefono = new SimpleStringProperty();
+        this.noCelular = new SimpleStringProperty();
+        this.correo = new SimpleStringProperty();
+        this.fechaNacimiento = new SimpleStringProperty();
+        this.edad = new SimpleStringProperty();
+        this.viveCon = new SimpleStringProperty();
+        this.nacionalidad = new SimpleStringProperty();
+        this.estadoCivil = new SimpleStringProperty();
+        this.personasDependientes = new SimpleStringProperty();
+        this.licencia = new SimpleStringProperty();
+        this.tipoLicencia = new SimpleStringProperty();
+        this.fechaExpiracionLicencia = new SimpleStringProperty();
+        this.cantidadTiempoManejando = new SimpleStringProperty();
+        this.poseeVehiculo = new SimpleStringProperty();
+        this.vehiculo = new SimpleStringProperty();
+        this.aspiracionSalarial = new SimpleStringProperty();
+        this.religion = new SimpleStringProperty();
+        this.viajarInterior = new SimpleStringProperty();
+        this.viajarExtranjero = new SimpleStringProperty();
+        this.idiomasManejados = new SimpleStringProperty();
+        this.softwareManejado = new SimpleStringProperty();
+        this.partidoPolitico = new SimpleStringProperty();
+        this.sindicato = new SimpleStringProperty();
+        this.adjetivos = new SimpleStringProperty();
+        this.fuma = new SimpleStringProperty();
+        this.fumaFrecuencia = new SimpleStringProperty();
+        this.alcohol = new SimpleStringProperty();
+        this.alcoholFrecuencia =new SimpleStringProperty( );
+        this.drogas =new SimpleStringProperty();
+        this.tatuajes = new SimpleStringProperty();
+        this.paisResidencia = new SimpleStringProperty();
+        this.calle = new SimpleStringProperty();
+        this.zona = new SimpleStringProperty();
+        this.municipio =new SimpleStringProperty( );
+        this.departamento = new SimpleStringProperty();
+        this.nombreConyuge = new SimpleStringProperty();
+        this.trabajoConyuge = new SimpleStringProperty();
+        this.telefonoConyuge = new SimpleStringProperty();
+        this.nombrePapa = new SimpleStringProperty();
+        this.trabajoPapa = new SimpleStringProperty();
+        this.telefonoPapa = new SimpleStringProperty();
+        this.nombreMama = new SimpleStringProperty();
+        this.trabajoMama = new SimpleStringProperty();
+        this.telefonoMama = new SimpleStringProperty();
+        this.nombreHermano1 = new SimpleStringProperty();
+        this.trabajoHermano1 = new SimpleStringProperty();
+        this.telefonoHermano1 = new SimpleStringProperty();
+        this.nombreHermano2 = new SimpleStringProperty();
+        this.trabajoHermano2 = new SimpleStringProperty();
+        this.telefonoHermano2 = new SimpleStringProperty();
+        this.nombreConocido = new SimpleStringProperty();
+        this.trabajoConocido = new SimpleStringProperty();
+        this.telefonoConocido = new SimpleStringProperty();
+    }
+
+    public InformacionPersonal(String dpi, String fecha, String timestamp, String nombre, String puesto,
                                String comoEntero, String genero, String noTelefono, String noCelular,
                                String correo, String fechaNacimiento, String edad, String viveCon,
                                String nacionalidad, String estadoCivil, String personasDependientes,
@@ -87,8 +159,7 @@ public class InformacionPersonal {
                                String viajarExtranjero, String idiomasManejados, String softwareManejado,
                                String partidoPolitico, String sindicato, String adjetivos, String fuma,
                                String fumaFrecuencia, String alcohol, String alcoholFrecuencia,
-                               String drogas, String tatuajes, String paisResidencia,
-                               String estudiosMasAltos, String calle, String zona, String municipio,
+                               String drogas, String tatuajes, String paisResidencia, String calle, String zona, String municipio,
                                String departamento, String nombreConyuge, String trabajoConyuge,
                                String telefonoConyuge, String nombrePapa, String trabajoPapa,
                                String telefonoPapa, String nombreMama, String trabajoMama,
@@ -97,8 +168,12 @@ public class InformacionPersonal {
                                String telefonoHermano2, String nombreConocido, String trabajoConocido,
                                String telefonoConocido) {
 
+        this.list = new ArrayList<>();
+        this.familiaList = new ArrayList<>();
+
         this.dpi = new SimpleStringProperty(dpi);
         this.fecha = new SimpleStringProperty(fecha);
+        this.timestamp = new SimpleStringProperty(timestamp);
         this.nombre = new SimpleStringProperty(nombre);
         this.puesto = new SimpleStringProperty(puesto);
         this.comoEntero = new SimpleStringProperty(comoEntero);
@@ -134,7 +209,6 @@ public class InformacionPersonal {
         this.drogas =new SimpleStringProperty( drogas);
         this.tatuajes = new SimpleStringProperty(tatuajes);
         this.paisResidencia = new SimpleStringProperty(paisResidencia);
-        this.estudiosMasAltos = new SimpleStringProperty(estudiosMasAltos);
         this.calle = new SimpleStringProperty(calle);
         this.zona = new SimpleStringProperty(zona);
         this.municipio =new SimpleStringProperty( municipio);
@@ -142,6 +216,7 @@ public class InformacionPersonal {
         this.nombreConyuge = new SimpleStringProperty(nombreConyuge);
         this.trabajoConyuge = new SimpleStringProperty(trabajoConyuge);
         this.telefonoConyuge = new SimpleStringProperty(telefonoConyuge);
+
         this.nombrePapa = new SimpleStringProperty(nombrePapa);
         this.trabajoPapa = new SimpleStringProperty(trabajoPapa);
         this.telefonoPapa = new SimpleStringProperty(telefonoPapa);
@@ -157,6 +232,77 @@ public class InformacionPersonal {
         this.nombreConocido = new SimpleStringProperty(nombreConocido);
         this.trabajoConocido = new SimpleStringProperty(trabajoConocido);
         this.telefonoConocido = new SimpleStringProperty(telefonoConocido);
+
+    }
+
+    public ArrayList<String> getList(){
+        list.add(getDpi());
+        list.add(getFecha());
+        list.add(getTimestamp());
+        list.add(getNombre());
+        list.add(getPuesto());
+        list.add(getComoEntero());
+        list.add(getGenero());
+        list.add(getNoTelefono());
+        list.add(getNoCelular());
+        list.add(getCorreo());
+        list.add(getFechaNacimiento());
+        list.add(getEdad());
+        list.add(getViveCon());
+        list.add(getNacionalidad());
+        list.add(getEstadoCivil());
+        list.add(getPersonasDependientes());
+        list.add(getLicencia());
+        list.add(getTipoLicencia());
+        list.add(getFechaExpiracionLicencia());
+        list.add(getCantidadTiempoManejando());
+        list.add(getPoseeVehiculo());
+        list.add(getVehiculo());
+        list.add(getAspiracionSalarial());
+        list.add(getReligion());
+        list.add(getViajarInterior());
+        list.add(getViajarExtranjero());
+        list.add(getIdiomasManejados());
+        list.add(getSoftwareManejado());
+        list.add(getPartidoPolitico());
+        list.add(getSindicato());
+        list.add(getAdjetivos());
+        list.add(getFuma());
+        list.add(getFumaFrecuencia());
+        list.add(getAlcohol());
+        list.add(getAlcoholFrecuencia());
+        list.add(getDrogas());
+        list.add(getTatuajes());
+        list.add(getPaisResidencia());
+        list.add(getCalle());
+        list.add(getZona());
+        list.add(getMunicipio());
+        list.add(getDepartamento());
+        list.add(getNombreConyuge());
+        list.add(getTrabajoConyuge());
+        list.add(getTelefonoConyuge());
+
+        return list;
+    }
+
+    public ArrayList<String> getFamiliaList(){
+        familiaList.add(getNombrePapa());
+        familiaList.add(getTrabajoPapa());
+        familiaList.add(getTelefonoPapa());
+        familiaList.add(getNombreMama());
+        familiaList.add(getTrabajoMama());
+        familiaList.add(getTelefonoMama());
+        familiaList.add(getNombreHermano1());
+        familiaList.add(getTrabajoHermano1());
+        familiaList.add(getTelefonoHermano1());
+        familiaList.add(getNombreHermano2());
+        familiaList.add(getTrabajoHermano2());
+        familiaList.add(getTelefonoHermano2());
+        familiaList.add(getNombreConocido());
+        familiaList.add(getTrabajoConocido());
+        familiaList.add(getTelefonoConocido());
+
+        return familiaList;
     }
 
     public String getDpi() {
@@ -181,6 +327,18 @@ public class InformacionPersonal {
 
     public void setFecha(String fecha) {
         this.fecha.set(fecha);
+    }
+
+    public String getTimestamp() {
+        return timestamp.get();
+    }
+
+    public StringProperty timestampProperty() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp.set(timestamp);
     }
 
     public String getNombre() {
@@ -603,17 +761,6 @@ public class InformacionPersonal {
         this.paisResidencia.set(paisResidencia);
     }
 
-    public String getEstudiosMasAltos() {
-        return estudiosMasAltos.get();
-    }
-
-    public StringProperty estudiosMasAltosProperty() {
-        return estudiosMasAltos;
-    }
-
-    public void setEstudiosMasAltos(String estudiosMasAltos) {
-        this.estudiosMasAltos.set(estudiosMasAltos);
-    }
 
     public String getCalle() {
         return calle.get();

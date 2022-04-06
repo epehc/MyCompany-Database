@@ -32,8 +32,8 @@ public class MainController implements Initializable {
     private Scene scene;
     private Parent root;
 
-    static StringProperty noDeDpiActual;
-    static StringProperty candidatoActual;
+    public static StringProperty noDeDpiActual;
+    public static StringProperty candidatoActual;
 
     /**
      * GoogleSheets element responsible for fetching the data from the database.

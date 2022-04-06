@@ -50,7 +50,7 @@ public class GoogleSheets {
     /**
      * Entire range of the Spreadsheet to work on
      */
-    private static final String RANGE_ENTIRE = "Main!A4:DU";
+    static final String RANGE_ENTIRE = "Main!A4:EO";
 
     /**
      * ID of the Spreadsheet to be worked with
@@ -61,7 +61,7 @@ public class GoogleSheets {
      * Global instance of the scopes required by this quickstart.
      * If modifying these scopes, delete your previously saved tokens/ folder.
      */
-    private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS_READONLY);
+    private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
     /**
      * Path to the stored credentials to use oauth from Google
      */

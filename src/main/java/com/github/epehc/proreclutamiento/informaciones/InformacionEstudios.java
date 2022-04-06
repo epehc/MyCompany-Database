@@ -3,7 +3,14 @@ package com.github.epehc.proreclutamiento.informaciones;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class InformacionEstudios {
+
+    ArrayList<String> list;
+
+    StringProperty estudiosMasAltos;
 
     //Informacion de estudios
     //Doctorado
@@ -30,6 +37,8 @@ public class InformacionEstudios {
     StringProperty otrosEstudios;
 
     public InformacionEstudios() {
+        list = new ArrayList<>();
+        this.estudiosMasAltos = new SimpleStringProperty();
         this.doctoradoInstitucion = new SimpleStringProperty();
         this.doctoradoEstudio = new SimpleStringProperty();
         this.doctoradoGrado = new SimpleStringProperty();
@@ -46,12 +55,15 @@ public class InformacionEstudios {
         this.colegioEstudio = new SimpleStringProperty();
         this.colegioGrado = new SimpleStringProperty();
         this.otrosEstudios = new SimpleStringProperty();
+
     }
 
-    public InformacionEstudios(String doctoradoInstitucion, String doctoradoEstudio, String doctoradoGrado, String maestriaInstitucion,
+    public InformacionEstudios(String estudiosMasAltos, String doctoradoInstitucion, String doctoradoEstudio, String doctoradoGrado, String maestriaInstitucion,
                                String maestriaEstudio, String maestriaGrado, String licenciaturaInstitucion, String licenciaturaEstudio,
                                String licenciaturaGrado, String tecnicoInstitucion, String tecnicoEstudio, String tecnicoGrado,
                                String colegioInstitucion, String colegioEstudio, String colegioGrado, String otrosEstudios) {
+        list = new ArrayList<>();
+        this.estudiosMasAltos = new SimpleStringProperty(estudiosMasAltos);
         this.doctoradoInstitucion = new SimpleStringProperty(doctoradoInstitucion);
         this.doctoradoEstudio = new SimpleStringProperty(doctoradoEstudio);
         this.doctoradoGrado = new SimpleStringProperty(doctoradoGrado);
@@ -68,6 +80,45 @@ public class InformacionEstudios {
         this.colegioEstudio = new SimpleStringProperty(colegioEstudio);
         this.colegioGrado = new SimpleStringProperty(colegioGrado);
         this.otrosEstudios = new SimpleStringProperty(otrosEstudios);
+
+    }
+
+    public ArrayList<String> getList(){
+        list.add(getEstudiosMasAltos());
+
+        list.add(getDoctoradoInstitucion());
+        list.add(getDoctoradoEstudio());
+        list.add(getDoctoradoGrado());
+
+        list.add(getMaestriaInstitucion());
+        list.add(getMaestriaEstudio());
+        list.add(getMaestriaGrado());
+
+        list.add(getLicenciaturaInstitucion());
+        list.add(getLicenciaturaEstudio());
+        list.add(getLicenciaturaGrado());
+
+        list.add(getTecnicoInstitucion());
+        list.add(getTecnicoEstudio());
+        list.add(getTecnicoGrado());
+
+        list.add(getColegioInstitucion());
+        list.add(getColegioEstudio());
+        list.add(getColegioGrado());
+
+        return list;
+    }
+
+    public String getEstudiosMasAltos() {
+        return estudiosMasAltos.get();
+    }
+
+    public StringProperty estudiosMasAltosProperty() {
+        return estudiosMasAltos;
+    }
+
+    public void setEstudiosMasAltos(String estudiosMasAltos) {
+        this.estudiosMasAltos.set(estudiosMasAltos);
     }
 
     public String getDoctoradoInstitucion() {

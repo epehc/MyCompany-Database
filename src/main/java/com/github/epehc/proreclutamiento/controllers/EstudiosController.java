@@ -9,10 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,6 +26,18 @@ public class EstudiosController implements Initializable {
     private Parent root;
 
     private InformacionEstudios informacionEstudios;
+
+    @FXML
+    private Tab tabLicenciatura;
+
+    @FXML
+    private Tab tabTecnico;
+
+    @FXML
+    private Tab tabDoctorado;
+
+    @FXML
+    private Tab tabMaestria;
 
     @FXML
     private Label labelNoDeDpiActual;
@@ -139,6 +148,10 @@ public class EstudiosController implements Initializable {
         stage.show();
     }
 
+    public void updateInformation() throws IOException {
+        MainController.sheets.updateInformacionEstudios(informacionEstudios);
+    }
+
     /**
      * Called to initialize a controller after its root element has been
      * completely processed.
@@ -151,6 +164,25 @@ public class EstudiosController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         informacionEstudios = MainController.sheets.getInformacionEstudios(MainController.noDeDpiActual.get());
+        String masAltos = informacionEstudios.getEstudiosMasAltos();
+
+        if(masAltos.contains("Maestría")){
+            tabDoctorado.setDisable(true);
+        }else if(masAltos.contains("Licenciatura")){
+            tabDoctorado.setDisable(true);
+            tabMaestria.setDisable(true);
+        }else if(masAltos.contains("Técnico")){
+            tabDoctorado.setDisable(true);
+            tabMaestria.setDisable(true);
+            tabLicenciatura.setDisable(true);
+        }else if(masAltos.contains("Básicos")){
+            tabDoctorado.setDisable(true);
+            tabMaestria.setDisable(true);
+            tabLicenciatura.setDisable(true);
+            tabTecnico.setDisable(true);
+        }
+
+
 
         labelCandidatoActual.setText(MainController.candidatoActual.get());
         labelNoDeDpiActual.setText(MainController.noDeDpiActual.get());
@@ -179,8 +211,6 @@ public class EstudiosController implements Initializable {
         tvColegioGrado.textProperty().bindBidirectional(informacionEstudios.colegioGradoProperty());
 
         taOtrosEstudios.textProperty().bindBidirectional(informacionEstudios.otrosEstudiosProperty());
-
-
 
 
     }

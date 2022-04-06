@@ -3,6 +3,7 @@ package com.github.epehc.proreclutamiento.controllers;
 import com.github.epehc.proreclutamiento.google.GoogleSheets;
 import com.github.epehc.proreclutamiento.informaciones.InformacionLaboral;
 import com.github.epehc.proreclutamiento.informaciones.InformacionReferencias;
+import com.google.api.services.sheets.v4.model.ValueRange;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,13 +39,57 @@ public class LaboralController implements Initializable {
     private Label labelCandidatoActual;
 
     @FXML
-    private TextArea taReferencias1;
+    private TextField tfNombreReferencia1;
     @FXML
-    private TextArea taReferencias2;
+    private TextField tfFechasReferencia1;
     @FXML
-    private TextArea taReferencias3;
+    private TextField tfPuestoReferencia1;
     @FXML
-    private TextArea taReferencias4;
+    private TextField tfPuestoEjercidoReferencia1;
+    @FXML
+    private TextField tfMotivoRetiroReferencia1;
+    @FXML
+    private TextArea taDescripcionReferencia1;
+
+
+    @FXML
+    private TextField tfNombreReferencia2;
+    @FXML
+    private TextField tfFechasReferencia2;
+    @FXML
+    private TextField tfPuestoReferencia2;
+    @FXML
+    private TextField tfPuestoEjercidoReferencia2;
+    @FXML
+    private TextField tfMotivoRetiroReferencia2;
+    @FXML
+    private TextArea taDescripcionReferencia2;
+
+    @FXML
+    private TextField tfNombreReferencia3;
+    @FXML
+    private TextField tfFechasReferencia3;
+    @FXML
+    private TextField tfPuestoReferencia3;
+    @FXML
+    private TextField tfPuestoEjercidoReferencia3;
+    @FXML
+    private TextField tfMotivoRetiroReferencia3;
+    @FXML
+    private TextArea taDescripcionReferencia3;
+
+    @FXML
+    private TextField tfNombreReferencia4;
+    @FXML
+    private TextField tfFechasReferencia4;
+    @FXML
+    private TextField tfPuestoReferencia4;
+    @FXML
+    private TextField tfPuestoEjercidoReferencia4;
+    @FXML
+    private TextField tfMotivoRetiroReferencia4;
+    @FXML
+    private TextArea taDescripcionReferencia4;
 
     @FXML
     private TextArea taResponsabilidades1;
@@ -145,10 +190,6 @@ public class LaboralController implements Initializable {
     @FXML
     private TextField tfTelefonoJefe4;
 
-    /**
-     * GoogleSheets element responsible for fetching the data from the database.
-     */
-    private final GoogleSheets sheets = new GoogleSheets();
 
     /**
      * Button used to update the current information
@@ -212,12 +253,35 @@ public class LaboralController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         informacionLaboral = MainController.sheets.getInformacionLaboral(MainController.noDeDpiActual.get());
-        informacionReferencias = new InformacionReferencias();
+        informacionReferencias = MainController.sheets.getInformacionReferencias(MainController.noDeDpiActual.get());
 
-        taReferencias1.textProperty().bindBidirectional(informacionReferencias.referencias1Property());
-        taReferencias2.textProperty().bindBidirectional(informacionReferencias.referencias2Property());
-        taReferencias3.textProperty().bindBidirectional(informacionReferencias.referencias3Property());
-        taReferencias4.textProperty().bindBidirectional(informacionReferencias.referencias4Property());
+        tfNombreReferencia1.textProperty().bindBidirectional(informacionReferencias.nombreReferencia1Property());
+        tfPuestoReferencia1.textProperty().bindBidirectional(informacionReferencias.puestoReferencia1Property());
+        tfFechasReferencia1.textProperty().bindBidirectional(informacionReferencias.fechasReferencia1Property());
+        tfPuestoEjercidoReferencia1.textProperty().bindBidirectional(informacionReferencias.puestoEjercidoReferencia1Property());
+        tfMotivoRetiroReferencia1.textProperty().bindBidirectional(informacionReferencias.motivoSalidaReferencia1Property());
+        taDescripcionReferencia1.textProperty().bindBidirectional(informacionReferencias.descripcionReferencia1Property());
+
+        tfNombreReferencia2.textProperty().bindBidirectional(informacionReferencias.nombreReferencia2Property());
+        tfPuestoReferencia2.textProperty().bindBidirectional(informacionReferencias.puestoReferencia2Property());
+        tfFechasReferencia2.textProperty().bindBidirectional(informacionReferencias.fechasReferencia2Property());
+        tfPuestoEjercidoReferencia2.textProperty().bindBidirectional(informacionReferencias.puestoEjercidoReferencia2Property());
+        tfMotivoRetiroReferencia2.textProperty().bindBidirectional(informacionReferencias.motivoSalidaReferencia2Property());
+        taDescripcionReferencia2.textProperty().bindBidirectional(informacionReferencias.descripcionReferencia2Property());
+
+        tfNombreReferencia3.textProperty().bindBidirectional(informacionReferencias.nombreReferencia3Property());
+        tfPuestoReferencia3.textProperty().bindBidirectional(informacionReferencias.puestoReferencia3Property());
+        tfFechasReferencia3.textProperty().bindBidirectional(informacionReferencias.fechasReferencia3Property());
+        tfPuestoEjercidoReferencia3.textProperty().bindBidirectional(informacionReferencias.puestoEjercidoReferencia3Property());
+        tfMotivoRetiroReferencia3.textProperty().bindBidirectional(informacionReferencias.motivoSalidaReferencia3Property());
+        taDescripcionReferencia3.textProperty().bindBidirectional(informacionReferencias.descripcionReferencia3Property());
+
+        tfNombreReferencia4.textProperty().bindBidirectional(informacionReferencias.nombreReferencia4Property());
+        tfPuestoReferencia4.textProperty().bindBidirectional(informacionReferencias.puestoReferencia4Property());
+        tfFechasReferencia4.textProperty().bindBidirectional(informacionReferencias.fechasReferencia4Property());
+        tfPuestoEjercidoReferencia4.textProperty().bindBidirectional(informacionReferencias.puestoEjercidoReferencia4Property());
+        tfMotivoRetiroReferencia4.textProperty().bindBidirectional(informacionReferencias.motivoSalidaReferencia4Property());
+        taDescripcionReferencia4.textProperty().bindBidirectional(informacionReferencias.descripcionReferencia4Property());
 
         labelCandidatoActual.setText(MainController.candidatoActual.get());
         labelNoDeDpiActual.setText(MainController.noDeDpiActual.get());
@@ -270,4 +334,11 @@ public class LaboralController implements Initializable {
         tfSalario4.textProperty().bindBidirectional(informacionLaboral.salario4Property());
         taResponsabilidades4.textProperty().bindBidirectional(informacionLaboral.responsabilidades4Property());
     }
+
+
+    public void updateInformation() throws IOException {
+        MainController.sheets.updateReferenciasLaborales(informacionReferencias);
+        MainController.sheets.updateInformacionLaboral(informacionLaboral);
+    }
+
 }

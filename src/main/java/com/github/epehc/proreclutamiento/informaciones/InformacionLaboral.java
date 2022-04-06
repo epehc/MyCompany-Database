@@ -3,7 +3,11 @@ package com.github.epehc.proreclutamiento.informaciones;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.ArrayList;
+
 public class InformacionLaboral {
+
+    ArrayList<String> list;
     //Trabajo 1
     StringProperty empresa1;
     StringProperty fechaInicio1;
@@ -61,6 +65,7 @@ public class InformacionLaboral {
 
 
     public InformacionLaboral(){
+        this.list = new ArrayList<>();
 
     }
     public InformacionLaboral(String empresa1, String fechaInicio1, String fechaFin1, String telefonoEmpresa1,
@@ -77,6 +82,8 @@ public class InformacionLaboral {
                               String telefonoEmpresa4, String direccionEmpresa4, String puesto4, String jefe4,
                               String telefonoJefe4, String salario4, String motivoSalida4,
                               String responsabilidades4) {
+        this.list = new ArrayList<>();
+
         this.empresa1 = new SimpleStringProperty(empresa1);
         this.fechaInicio1 = new SimpleStringProperty(fechaInicio1);
         this.fechaFin1 = new SimpleStringProperty(fechaFin1);
@@ -88,6 +95,7 @@ public class InformacionLaboral {
         this.salario1 = new SimpleStringProperty(salario1);
         this.motivoSalida1 = new SimpleStringProperty(motivoSalida1);
         this.responsabilidades1 = new SimpleStringProperty(responsabilidades1);
+
         this.empresa2 = new SimpleStringProperty(empresa2);
         this.fechaInicio2 = new SimpleStringProperty(fechaInicio2);
         this.fechaFin2 = new SimpleStringProperty(fechaFin2);
@@ -99,6 +107,7 @@ public class InformacionLaboral {
         this.salario2 = new SimpleStringProperty(salario2);
         this.motivoSalida2 = new SimpleStringProperty(motivoSalida2);
         this.responsabilidades2 = new SimpleStringProperty(responsabilidades2);
+
         this.empresa3 = new SimpleStringProperty(empresa3);
         this.fechaInicio3 = new SimpleStringProperty(fechaInicio3);
         this.fechaFin3 = new SimpleStringProperty(fechaFin3);
@@ -110,6 +119,7 @@ public class InformacionLaboral {
         this.salario3 = new SimpleStringProperty(salario3);
         this.motivoSalida3 = new SimpleStringProperty(motivoSalida3);
         this.responsabilidades3 = new SimpleStringProperty(responsabilidades3);
+
         this.empresa4 = new SimpleStringProperty(empresa4);
         this.fechaInicio4 = new SimpleStringProperty(fechaInicio4);
         this.fechaFin4 = new SimpleStringProperty(fechaFin4);
@@ -122,6 +132,60 @@ public class InformacionLaboral {
         this.motivoSalida4 = new SimpleStringProperty(motivoSalida4);
         this.responsabilidades4 = new SimpleStringProperty(responsabilidades4);
     }
+
+    public ArrayList<String> getList() {
+
+        list.add(getEmpresa1());
+        list.add(getFechaInicio1());
+        list.add(getFechaFin1());
+        list.add(getTelefonoEmpresa1());
+        list.add(getDireccionEmpresa1());
+        list.add(getPuesto1());
+        list.add(getJefe1());
+        list.add(getTelefonoJefe1());
+        list.add(getSalario1());
+        list.add(getMotivoSalida1());
+        list.add(getResponsabilidades1());
+
+        list.add(getEmpresa2());
+        list.add(getFechaInicio2());
+        list.add(getFechaFin2());
+        list.add(getTelefonoEmpresa2());
+        list.add(getDireccionEmpresa2());
+        list.add(getPuesto2());
+        list.add(getJefe2());
+        list.add(getTelefonoJefe2());
+        list.add(getSalario2());
+        list.add(getMotivoSalida2());
+        list.add(getResponsabilidades2());
+
+        list.add(getEmpresa3());
+        list.add(getFechaInicio3());
+        list.add(getFechaFin3());
+        list.add(getTelefonoEmpresa3());
+        list.add(getDireccionEmpresa3());
+        list.add(getPuesto3());
+        list.add(getJefe3());
+        list.add(getTelefonoJefe3());
+        list.add(getSalario3());
+        list.add(getMotivoSalida3());
+        list.add(getResponsabilidades3());
+
+        list.add(getEmpresa4());
+        list.add(getFechaInicio4());
+        list.add(getFechaFin4());
+        list.add(getTelefonoEmpresa4());
+        list.add(getDireccionEmpresa4());
+        list.add(getPuesto4());
+        list.add(getJefe4());
+        list.add(getTelefonoJefe4());
+        list.add(getSalario4());
+        list.add(getMotivoSalida4());
+        list.add(getResponsabilidades4());
+
+        return list;
+    }
+
 
     public String getEmpresa1() {
         return empresa1.get();

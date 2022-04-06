@@ -91,7 +91,7 @@
          <children>
             <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
                <tabs>
-                  <Tab text="Doctorado">
+                  <Tab fx:id="tabDoctorado" text="Doctorado">
                      <content>
                         <GridPane>
                            <columnConstraints>
@@ -147,7 +147,7 @@
                         </GridPane>
                      </content>
                   </Tab>
-                  <Tab text="Maestría">
+                  <Tab fx:id="tabMaestria" text="Maestría">
                      <content>
                         <GridPane>
                            <columnConstraints>
@@ -203,7 +203,7 @@
                         </GridPane>
                      </content>
                   </Tab>
-                  <Tab text="Licenciatura">
+                  <Tab fx:id="tabLicenciatura" text="Licenciatura">
                      <content>
                         <GridPane>
                            <columnConstraints>
@@ -259,7 +259,7 @@
                         </GridPane>
                      </content>
                   </Tab>
-                  <Tab text="Técnico">
+                  <Tab fx:id="tabTecnico" text="Técnico">
                      <content>
                         <GridPane>
                            <columnConstraints>
