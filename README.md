@@ -9,3 +9,6 @@ Because over time new Information has been asked from the candidates, the first 
 
 Because the viewing experience of the data itself is not the best, the goal of this project was to create a piece of software where the company could view the applicants information separated into categories, as well as still be able to edit the information accordingly, and have it update itself on the Google Sheets database.
 
+Because the database was created Google Forms and Google Sheets, I had to learn a little bit about the Google Sheets API and the Google Cloud console. 
+
+Should the program require access from the Google Cloud Console, please feel free to reach out.
