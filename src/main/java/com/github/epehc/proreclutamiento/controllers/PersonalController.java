@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -238,7 +239,7 @@ public class PersonalController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("main.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Inicio");
+        stage.setTitle("MyCompany - Inicio");
         stage.setScene(scene);
         stage.show();
     }
@@ -252,7 +253,7 @@ public class PersonalController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-estudios.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Estudios");
+        stage.setTitle("MyCompany - Estudios");
         stage.setScene(scene);
         stage.show();
     }
@@ -266,7 +267,7 @@ public class PersonalController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-laboral.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Laboral");
+        stage.setTitle("MyCompany - Laboral");
         stage.setScene(scene);
         stage.show();
     }

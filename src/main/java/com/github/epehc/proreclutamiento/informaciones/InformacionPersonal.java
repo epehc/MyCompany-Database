@@ -3,7 +3,11 @@ package com.github.epehc.proreclutamiento.informaciones;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class InformacionPersonal {
 
@@ -14,7 +18,7 @@ public class InformacionPersonal {
     //Personal
     StringProperty dpi;
     StringProperty fecha;
-    StringProperty timestamp;
+    Timestamp timestamp;
     StringProperty nombre;
     StringProperty puesto;
     StringProperty comoEntero;
@@ -89,7 +93,8 @@ public class InformacionPersonal {
 
         this.dpi = new SimpleStringProperty();
         this.fecha = new SimpleStringProperty();
-        this.timestamp = new SimpleStringProperty();
+        Date date = new Date();
+        this.timestamp = new Timestamp(date.getTime());
         this.nombre = new SimpleStringProperty();
         this.puesto = new SimpleStringProperty();
         this.comoEntero = new SimpleStringProperty();
@@ -173,7 +178,7 @@ public class InformacionPersonal {
 
         this.dpi = new SimpleStringProperty(dpi);
         this.fecha = new SimpleStringProperty(fecha);
-        this.timestamp = new SimpleStringProperty(timestamp);
+        this.timestamp = Timestamp.valueOf(timestamp);
         this.nombre = new SimpleStringProperty(nombre);
         this.puesto = new SimpleStringProperty(puesto);
         this.comoEntero = new SimpleStringProperty(comoEntero);
@@ -238,7 +243,7 @@ public class InformacionPersonal {
     public ArrayList<String> getList(){
         list.add(getDpi());
         list.add(getFecha());
-        list.add(getTimestamp());
+        list.add(getTimestamp().toString());
         list.add(getNombre());
         list.add(getPuesto());
         list.add(getComoEntero());
@@ -329,16 +334,13 @@ public class InformacionPersonal {
         this.fecha.set(fecha);
     }
 
-    public String getTimestamp() {
-        return timestamp.get();
-    }
-
-    public StringProperty timestampProperty() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
+
     public void setTimestamp(String timestamp) {
-        this.timestamp.set(timestamp);
+        this.timestamp = Timestamp.valueOf(timestamp);
     }
 
     public String getNombre() {

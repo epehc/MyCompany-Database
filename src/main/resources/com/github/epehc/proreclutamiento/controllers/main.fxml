@@ -91,6 +91,7 @@
             <TableView fx:id="table" prefHeight="409.0" prefWidth="837.0">
               <columns>
                 <TableColumn fx:id="dpis" prefWidth="131.0" text="No. de DPI:" />
+                 <TableColumn fx:id="timestamps" minWidth="0.0" prefWidth="0.0" text="Timestamps:" />
                 <TableColumn fx:id="fechas" prefWidth="127.0" text="Fecha" />
                   <TableColumn fx:id="nombres" prefWidth="347.0" text="Nombre" />
                   <TableColumn fx:id="puestos" minWidth="0.0" prefWidth="231.0" text="Puesto al que aplica:" />

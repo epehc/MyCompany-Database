@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -115,7 +116,7 @@ public class EstudiosController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("main.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Inicio");
+        stage.setTitle("MyCompany - Inicio");
         stage.setScene(scene);
         stage.show();
     }
@@ -129,7 +130,7 @@ public class EstudiosController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-laboral.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Laboral");
+        stage.setTitle("MyCompany - Laboral");
         stage.setScene(scene);
         stage.show();
     }
@@ -143,7 +144,7 @@ public class EstudiosController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-personal.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Personal");
+        stage.setTitle("MyCompany - Personal");
         stage.setScene(scene);
         stage.show();
     }

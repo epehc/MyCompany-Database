@@ -2,8 +2,11 @@ package com.github.epehc.proreclutamiento.controllers;
 
 import com.github.epehc.proreclutamiento.google.GoogleSheets;
 import com.github.epehc.proreclutamiento.informaciones.InformacionLaboral;
+import com.github.epehc.proreclutamiento.informaciones.InformacionPapeleria;
 import com.github.epehc.proreclutamiento.informaciones.InformacionReferencias;
 import com.google.api.services.sheets.v4.model.ValueRange;
+import javafx.beans.property.Property;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,10 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class LaboralController implements Initializable {
 
     private InformacionLaboral informacionLaboral;
     private InformacionReferencias informacionReferencias;
+    private InformacionPapeleria informacionPapeleria;
 
     @FXML
     private Label labelNoDeDpiActual;
@@ -190,6 +192,43 @@ public class LaboralController implements Initializable {
     @FXML
     private TextField tfTelefonoJefe4;
 
+    @FXML
+    private CheckBox cbPapeleriaCompleta;
+    @FXML
+    private CheckBox cbDpi;
+    @FXML
+    private CheckBox cbRtu;
+    @FXML
+    private CheckBox cbAntecedentesPenales;
+    @FXML
+    private CheckBox cbAntecedentesPoliciales;
+    @FXML
+    private CheckBox cbReciboServicios;
+    @FXML
+    private CheckBox cbConstanciasEstudios;
+    @FXML
+    private CheckBox cbConstanciasLaborales;
+    @FXML
+    private CheckBox cbCv;
+    @FXML
+    private CheckBox cbReferenciasLaborales;
+    @FXML
+    private CheckBox cbCartasDeRecomendacion;
+    @FXML
+    private CheckBox cbPasaporte;
+    @FXML
+    private CheckBox cbConstanciaDeResidencia;
+    @FXML
+    private CheckBox cbCarneVacunacion;
+    @FXML
+    private CheckBox cbTarjetaSalud;
+    @FXML
+    private CheckBox cbTarjetaPulmones;
+    @FXML
+    private CheckBox cbTarjetaManipulacionAlimentos;
+
+
+
 
     /**
      * Button used to update the current information
@@ -209,7 +248,7 @@ public class LaboralController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("main.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Inicio");
+        stage.setTitle("MyCompany - Inicio");
         stage.setScene(scene);
         stage.show();
     }
@@ -223,7 +262,7 @@ public class LaboralController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-estudios.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Estudios");
+        stage.setTitle("MyCompany - Estudios");
         stage.setScene(scene);
         stage.show();
     }
@@ -237,7 +276,7 @@ public class LaboralController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-personal.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Personal");
+        stage.setTitle("MyCompany - Personal");
         stage.setScene(scene);
         stage.show();
     }
@@ -254,6 +293,9 @@ public class LaboralController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         informacionLaboral = MainController.sheets.getInformacionLaboral(MainController.noDeDpiActual.get());
         informacionReferencias = MainController.sheets.getInformacionReferencias(MainController.noDeDpiActual.get());
+        informacionPapeleria = MainController.sheets.getInformacionPapeleria(MainController.noDeDpiActual.get());
+
+        //informacionPapeleria.papeleriaCompletaProperty().addListener((ChangeListener<? super String>) cbPapeleriaCompleta.selectedProperty() );
 
         tfNombreReferencia1.textProperty().bindBidirectional(informacionReferencias.nombreReferencia1Property());
         tfPuestoReferencia1.textProperty().bindBidirectional(informacionReferencias.puestoReferencia1Property());

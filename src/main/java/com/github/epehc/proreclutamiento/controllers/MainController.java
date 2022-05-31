@@ -17,11 +17,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.security.GeneralSecurityException;
+import java.sql.Timestamp;
 import java.util.ResourceBundle;
 
 /**
@@ -72,6 +74,8 @@ public class MainController implements Initializable {
     TableColumn<InformacionInicio, String> nombres;
     @FXML
     TableColumn<InformacionInicio, String> puestos;
+    @FXML
+    TableColumn<InformacionInicio, Timestamp> timestamps;
 
     /**
      * Constructor
@@ -91,7 +95,7 @@ public class MainController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-estudios.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Estudios");
+        stage.setTitle("MyCompany - Estudios");
         stage.setScene(scene);
         stage.show();
     }
@@ -105,7 +109,7 @@ public class MainController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-laboral.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Laboral");
+        stage.setTitle("MyCompany - Laboral");
         stage.setScene(scene);
         stage.show();
     }
@@ -119,7 +123,7 @@ public class MainController implements Initializable {
         root = FXMLLoader.load(getClass().getResource("info-personal.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("PROreclutamiento - Personal");
+        stage.setTitle("MyCompany - Personal");
         stage.setScene(scene);
         stage.show();
     }
@@ -153,11 +157,12 @@ public class MainController implements Initializable {
         fechas.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         nombres.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         puestos.setCellValueFactory(new PropertyValueFactory<>("puesto"));
+        timestamps.setCellValueFactory(new PropertyValueFactory<>("timestamp"));
 
         //Load the information into the table
         table.setItems(tableContent);
         table.setEditable(true);
-        //table.getSortOrder().add(fechas);
+        table.getSortOrder().add(timestamps);
 
         dpis.setCellFactory(TextFieldTableCell.forTableColumn());
 

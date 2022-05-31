@@ -1,5 +1,7 @@
 package com.github.epehc.proreclutamiento.informaciones;
 
+import java.sql.Timestamp;
+
 /**
  * Class to create Objects used to populate TableView in MainController with the help of CellFactoryValue
  */
@@ -13,6 +15,8 @@ public class InformacionInicio {
      * Date when the form was submitted
      */
     private String fecha;
+
+    private Timestamp timestamp;
     /**
      * Name of the person
      */
@@ -30,9 +34,10 @@ public class InformacionInicio {
      * @param nombre name of the person
      * @param puesto job description the person is applying to
      */
-    public InformacionInicio(String dpi, String fecha, String nombre, String puesto) {
+    public InformacionInicio(String dpi, String fecha, String timestamp, String nombre, String puesto) {
         this.dpi = dpi;
         this.fecha = fecha;
+        this.timestamp = Timestamp.valueOf(timestamp);
         this.nombre = nombre;
         this.puesto = puesto;
     }
@@ -67,5 +72,9 @@ public class InformacionInicio {
      */
     public String getPuesto() {
         return puesto;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 }

@@ -38,16 +38,23 @@ public class GoogleSheetsMethods {
 
         //Different value range since another range in another spreadsheet is being used
         ValueRange response = GoogleSheets.service.spreadsheets().values()
-                .get(SPREADSHEET_ID, "Invertido!A4:E")
+                .get(SPREADSHEET_ID, "Main!A4:E")
                 .execute();
         List<List<Object>> values = response.getValues();
 
         for(List row : values){
-            list.add(new InformacionInicio((String) row.get(0), (String) row.get(2), (String) row.get(3), (String) row.get(4)));
+            System.out.println("test     "+row.get(2));
+            list.add(new InformacionInicio((String) row.get(0),(String) row.get(1), (String) row.get(2), (String) row.get(3), (String) row.get(4)));
+
         }
         return list;
     }
 
+    /**
+     * Method to get all the studies-related Information of a candidate from the Database
+     * @param dpi the ID of the candidate to for
+     * @return the studies information as an InformacionEstudios object
+     */
     public InformacionEstudios getInformacionEstudios(String dpi){
         for(List row: GoogleSheets.values){
             if(row.get(0).equals(dpi)){
@@ -60,6 +67,11 @@ public class GoogleSheetsMethods {
         return new InformacionEstudios();
     }
 
+    /**
+     * Method to get all the working-related information of a candidate from the Database
+     * @param dpi the ID of the candidate to look for
+     * @return the working information as an InformacionLaboral object
+     */
     public InformacionLaboral getInformacionLaboral(String dpi){
         for(List row: GoogleSheets.values){
             if(row.get(0).equals(dpi)){
@@ -78,6 +90,11 @@ public class GoogleSheetsMethods {
         return new InformacionLaboral();
     }
 
+    /**
+     * Method to get all the working references-related information of a candidate from the Database
+     * @param dpi the ID of the candidate to look for
+     * @return the working information as an InformacionReferencias object
+     */
     public InformacionReferencias getInformacionReferencias(String dpi) {
         for(List row: GoogleSheets.values){
             if(row.get(0).equals(dpi)){
@@ -94,6 +111,11 @@ public class GoogleSheetsMethods {
         return new InformacionReferencias();
     }
 
+    /**
+     * Method to get all the personal information of a candidate from the Database
+     * @param dpi the ID of the candidate to look for
+     * @return the working information as an InformacionPersonal object
+     */
     public InformacionPersonal getInformacionPersonal(String dpi){
         for(List row: GoogleSheets.values){
             if(row.get(0).equals(dpi)){
@@ -116,6 +138,22 @@ public class GoogleSheetsMethods {
             }
         }
         return new InformacionPersonal();
+    }
+
+    /**
+     * Method to get all the paperwork information of a candidate from the Database
+     * @param dpi the ID of the candidate to look for
+     * @return the working information as an InformacionPapeleria object
+     */
+    public InformacionPapeleria getInformacionPapeleria(String dpi){
+        for(List row: GoogleSheets.values){
+            if(row.get(0).equals(dpi)){
+                return new InformacionPapeleria((String) row.get(145), (String) row.get(146), (String) row.get(147), (String) row.get(148), (String) row.get(149),
+                        (String) row.get(150), (String) row.get(151), (String) row.get(152), (String) row.get(153), (String) row.get(154), (String) row.get(155),
+                        (String) row.get(156), (String) row.get(157), (String) row.get(158), (String) row.get(159), (String) row.get(160), (String) row.get(161));
+            }
+        }
+        return new InformacionPapeleria();
     }
 
     //Add data
@@ -187,6 +225,30 @@ public class GoogleSheetsMethods {
         }
         UpdateValuesResponse result = GoogleSheets.service.spreadsheets().values()
                 .update(SPREADSHEET_ID, "Main!BK"+rowToUpdate+":DB"+rowToUpdate, body)
+                .setValueInputOption("RAW")
+                .execute();
+    }
+
+    /**
+     * Method to update the paperwork information in the database
+     * @param info the InformacionPapeleria object containing the paperwork information to be updated
+     * @throws IOException
+     */
+    public void updateInformacionPapeleria(InformacionPapeleria info) throws IOException{
+        ValueRange body = new ValueRange()
+                .setValues(Arrays.asList(
+                        Arrays.asList(info.getPapeleriaCompleta(), info.getDpi(), info.getRtu(), info.getAntecedentesPenales(), info.getAntecedentesPoliciales(),
+                                info.getReciboServicios(), info.getConstanciasEstudios(), info.getConstanciasLaborales(), info.getCv(),
+                                info.getReferenciasLaborales(), info.getCartasRecomendacion(), info.getPasaporte(), info.getConstanciaResidencia(),
+                                info.getCarneVacunacion(), info.getTarjetaSalud(), info.getTarjetaPulmones(), info.getTarjetaManipulacionAlimentos())
+                ));
+
+        int rowToUpdate = findRowToUpdate(MainController.noDeDpiActual.get(), GoogleSheets.RANGE_ENTIRE) + 4;
+        if(rowToUpdate <0){
+            return;
+        }
+        UpdateValuesResponse result = GoogleSheets.service.spreadsheets().values()
+                .update(SPREADSHEET_ID, "Main!EP"+rowToUpdate+":FF"+rowToUpdate, body)
                 .setValueInputOption("RAW")
                 .execute();
     }

@@ -12,6 +12,7 @@ module com.github.epehc.proreclutamiento {
     requires com.google.api.services.sheets;
     requires com.google.gson;
     requires jdk.httpserver;
+    requires java.sql;
     //requires google.api.services.sheets.v4.rev516;
 
 

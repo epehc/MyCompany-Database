@@ -50,12 +50,12 @@ public class GoogleSheets {
     /**
      * Entire range of the Spreadsheet to work on
      */
-    static final String RANGE_ENTIRE = "Main!A4:EO";
+    static final String RANGE_ENTIRE = "Main!A4:FF";
 
     /**
      * ID of the Spreadsheet to be worked with
      */
-    static final String SPREADSHEET_ID = "1ptUdJ-99TFzq_bGvxB9H3Iz5T5y4-A4y64PXj6tYEkI";
+    static final String SPREADSHEET_ID = "1LD7eeSJvMXhRbChjjx1QSxqjWmb5UIjuaUup24D9BFo";
 
     /**
      * Global instance of the scopes required by this quickstart.
