@@ -43,7 +43,6 @@ public class GoogleSheetsMethods {
         List<List<Object>> values = response.getValues();
 
         for(List row : values){
-            System.out.println("test     "+row.get(2));
             list.add(new InformacionInicio((String) row.get(0),(String) row.get(1), (String) row.get(2), (String) row.get(3), (String) row.get(4)));
 
         }
@@ -263,7 +262,7 @@ public class GoogleSheetsMethods {
     public void updateInformacionPersonal(InformacionPersonal info) throws IOException{
         ValueRange body = new ValueRange()
                 .setValues(Arrays.asList(
-                        Arrays.asList(info.getDpi(), info.getFecha(), info.getTimestamp(), info.getNombre(),
+                        Arrays.asList(info.getNombre(),
                                 info.getPuesto(), info.getComoEntero(), info.getGenero(), info.getNoTelefono(),
                                 info.getNoCelular(), info.getCorreo(), info.getFechaNacimiento(), info.getEdad(),
                                 info.getViveCon(), info.getNacionalidad(), info.getEstadoCivil(), info.getPersonasDependientes(),
@@ -282,7 +281,7 @@ public class GoogleSheetsMethods {
             return;
         }
         UpdateValuesResponse result = GoogleSheets.service.spreadsheets().values()
-                .update(SPREADSHEET_ID, "Main!A"+rowToUpdate+":AS"+rowToUpdate, body)
+                .update(SPREADSHEET_ID, "Main!D"+rowToUpdate+":AS"+rowToUpdate, body)
                 .setValueInputOption("RAW")
                 .execute();
 
